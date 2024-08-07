@@ -25,19 +25,14 @@
     const timeDisplay = document.getElementById("time-display");
     const myIpBtn = document.getElementById("my-ip-btn");
     const ipDisplay = document.getElementById("ip-display");
-    const githubToken = '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';
-    const repoOwner = 'thegreat2023';
-    const repoName = 'Mchat';
-    const filePath = 'user-inputs.txt'; // file path in your repository
-
+    
     submitBtn.addEventListener("click", () => {
       const userInput = codeInput.value.trim();
       if (codes.includes(userInput)) {
         popup.style.display = "none";
         content.style.display = "block";
 
-        // Update the file in the GitHub repository
-
+       
         .then(response => response.json())
         .then(data => console.log(`File updated: ${data.commit.sha}`))
         .catch(error => console.error(`Error: ${error}`));
