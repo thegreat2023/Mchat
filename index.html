@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mchat</title>
+</head>
+<body>
+  <div id="popup">
+    <input id="code-input" type="text" placeholder="Enter code">
+    <button id="submit-btn">Submit</button>
+  </div>
+  <div id="content" style="display: none;">
+    <button id="time-btn">Get Time</button>
+    <button id="my-ip-btn">My IP</button>
+    <p id="time-display"></p>
+    <p id="ip-display"></p>
+  </div>
+
+  <script>
+    const codes = ["8792", "3453", "4523"];
+    const popup = document.getElementById("popup");
+    const content = document.getElementById("content");
+    const codeInput = document.getElementById("code-input");
+    const submitBtn = document.getElementById("submit-btn");
+    const timeBtn = document.getElementById("time-btn");
+    const timeDisplay = document.getElementById("time-display");
+    const myIpBtn = document.getElementById("my-ip-btn");
+    const ipDisplay = document.getElementById("ip-display");
+    const githubToken = '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';
+    const repoOwner = 'thegreat2023';
+    const repoName = 'Mchat';
+    const filePath = 'user-inputs.txt'; // file path in your repository
+
+    submitBtn.addEventListener("click", () => {
+      const userInput = codeInput.value.trim();
+      if (codes.includes(userInput)) {
+        popup.style.display = "none";
+        content.style.display = "block";
+
+        // Update the file in the GitHub repository
+        fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}`, {
+          method: 'PUT',
+          headers: {
+            'Authorization': `Bearer ${githubToken}`,
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            message: 'User input',
+            content: userInput,
+            branch: 'main' // or your default branch
+          })
+        })
+        .then(response => response.json())
+        .then(data => console.log(`File updated: ${data.commit.sha}`))
+        .catch(error => console.error(`Error: ${error}`));
+      } else {
+        alert("Invalid code. Please try again.");
+        codeInput.value = ""; // clear the input field
+      }
+    });
+
+    timeBtn.addEventListener("click", () => {
+      const currentTime = new Date();
+      const hours = currentTime.getHours();
+      const minutes = currentTime.getMinutes();
+      const seconds = currentTime.getSeconds();
+      timeDisplay.innerText = `Current Time: ${hours}:${minutes}:${seconds}`;
+    });
+
+    myIpBtn.addEventListener("click", async () => {
+      try {
+        const response = await fetch('https://api.ipify.org?format=json');
+        const data = await response.json();
+        const ipAddress = data.ip;
+        ipDisplay.innerText = `Your IP address: ${ipAddress}`;
+
+        // Store the IP address in the user-inputs.txt file
+        fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}`, {
+          method: 'PUT',
+          headers: {
+            'Authorization': `Bearer ${githubToken}`,
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            message: 'User IP address',
+            content: ipAddress,
+            branch: 'main' // or your default branch
+          })
+        })
+        .then(response => response.json())
+        .then(data => console.log(`File updated: ${data.commit.sha}`))
+        .catch(error => console.error(`Error: ${error}`));
+      } catch (error) {
+        console.error(`Error getting IP address: ${error}`);
+        ipDisplay.innerText = `Error: ${error}`;
+      }
+    });
+  </script>
+</body>
+  </html>
