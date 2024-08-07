@@ -25,7 +25,7 @@
     const timeDisplay = document.getElementById("time-display");
     const myIpBtn = document.getElementById("my-ip-btn");
     const ipDisplay = document.getElementById("ip-display");
-    const githubToken = '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';
+    const githubToken = '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';
     const repoOwner = 'thegreat2023';
     const repoName = 'Mchat';
     const filePath = 'user-inputs.txt'; // file path in your repository
@@ -37,10 +37,10 @@
         content.style.display = "block";
 
         // Update the file in the GitHub repository
-        fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}`, {
+        fetch(`https://api.github.com/repos/${thegreat2023}/${Mchat}/contents/${user-inputs.txt}`, {
           method: 'PUT',
           headers: {
-            'Authorization': `Bearer ${githubToken}`,
+            'Authorization': `Bearer ${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}`,
             'Content-Type': 'application/json'
           },
           body: JSON.stringify({
@@ -74,10 +74,10 @@
         ipDisplay.innerText = `Your IP address: ${ipAddress}`;
 
         // Store the IP address in the user-inputs.txt file
-        fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}`, {
+        fetch(`https://api.github.com/repos/${thegreat2023}/${Mchat}/contents/${user-inputs.txt}`, {
           method: 'PUT',
           headers: {
-            'Authorization': `Bearer ${githubToken}`,
+            'Authorization': `Bearer ${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}`,
             'Content-Type': 'application/json'
           },
           body: JSON.stringify({
