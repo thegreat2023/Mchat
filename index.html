@@ -102,7 +102,9 @@
 document.getElementById("average1").addEventListener("click", function() {
   var code = prompt("Enter your code:");
   if (code === "8792" || code === "4322" || code === "0913") {
-    document.body.style.backgroundImage = "url('introT.jpg')";
+    document.body.style.backgroundImage = "url('IntroT.jpg')";
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundRepeat = "no-repeat";
     document.body.innerHTML = "<h1><center>Averageness</center></h1>";
   }
 });
