@@ -47,3 +47,29 @@ body {
 #time-btn:hover {
   background-color: #3e8e41;
 }
+/* Styles for all devices */
+body {
+  font-family: sans-serif; /* Example font */
+  margin: 0;
+  padding: 0;
+}
+
+/* Styles for screens smaller than 768px (typical phone width) */
+@media only screen and (max-width: 768px) {
+  #popup, #content {
+    width: 100%; /* Make elements full width on mobile */
+  }
+
+  #code-input, #submit-btn {
+    width: 100%; /* Make input and button full width */
+  }
+
+  #time-btn, #my-ip-btn {
+    display: block; /* Make buttons stack vertically */
+    width: 100%; /* Make buttons full width */
+    margin-bottom: 10px; /* Add spacing between buttons */
+  }
+
+  /* Adjust other styles as needed for mobile layout */
+}
+
