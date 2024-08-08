@@ -175,12 +175,14 @@
     leftDiv.style.backgroundRepeat = "no-repeat";
 
     const rightDiv = document.createElement("div");
-    rightDiv.style.width = "250px";
+   rightDiv.style.margin-top: 250px;
+               rightDiv.style.width = "250px";
     rightDiv.style.height = "100px";
     rightDiv.style.float = "right";
     rightDiv.style.backgroundImage = "url('I.jpg')";
     rightDiv.style.backgroundSize = "cover";
     rightDiv.style.backgroundRepeat = "no-repeat";
+   rightDiv.style.position ="fixed";         
 
     document.body.innerHTML = "";
     document.body.appendChild(leftDiv);
