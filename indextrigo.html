@@ -8,15 +8,19 @@
       padding: 0;
     }
     .container {
-      position: center;
-      height:350px; /* changed from 100px to 100vh to cover full height */
+      display: inline-block; /* changed from block to inline-block */
+      height: 300px;
       width: 350px;
       background-image: url('T.jpg');
-      background-size: 100%; /* added this line */
+      background-size: 100%;
     }
-p {
-  display: inline;
-}
+    .text-container {
+      display: inline-block; /* added this class */
+      vertical-align: top; /* added this property */
+    }
+    p {
+      margin: 0; /* added this to remove default margin */
+    }
     h1 {
       text-align: center;
       margin-top: 20px;
@@ -31,16 +35,14 @@ p {
         flex-direction: column;
         align-items: center;
       }
-      
     }
   </style>
 </head>
 <body>
   <h1>Trigo's Exposure</h1>
-  <div class="container">    
+  <div class="container"></div>
+  <div class="text-container">
+    <p>Id - .trigo_69<br>Age - 19<br>Location - Assam<br>Curren-Location - Haryana<br>Nationality - Indian</p>
   </div>
-  <p> Id - .trigo_69<br>Age - 19<br>Location - Assam
-  <br>Curren-Location - Haryana<br>Nationality - Indian</p>
-  
 </body>
 </html>
