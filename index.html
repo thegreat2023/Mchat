@@ -43,6 +43,10 @@
           justify-content: center;
          
        }
+       .right-div {
+          display:block
+          justify-content: center;
+       }
     }
 
     /* Button styles */
@@ -149,46 +153,55 @@
             }
         }
 
-        document.getElementById("average1").addEventListener("click", function() {
-            var code = prompt("Enter your code:");
-            if (code === "8792" || code === "4322" || code === "0913") {
-                document.body.style.backgroundImage = "url('IntroT.jpg')";
-                document.body.style.backgroundSize = "cover";
-                document.body.style.backgroundRepeat = "no-repeat";
-                document.body.innerHTML = "<h1><center>Averageness</center></h1>";
-              const body = document.querySelector('body');
+        
+  document.getElementById("average1").addEventListener("click", function() {
+    var code = prompt("Enter your code:");
+    if (code === "8792" || code === "4322" || code === "0913") {
+      document.body.style.backgroundImage = "url('IntroT.jpg')";
+      document.body.style.backgroundSize = "cover";
+      document.body.style.backgroundRepeat = "no-repeat";
+      document.body.style.margin = '0';
+      document.body.style.padding = '0';
+      document.body.style.width = '100vw';
+      document.body.style.height = '100vh';
+      document.body.style.overflow = 'hidden';
 
-              body.style.margin = '0';
-              body.style.padding = '0';
-              body.style.width = '100vw';
-              body.style.height = '100vh';
-              body.style.overflow = 'hidden';
-            
-           
+      const heading = document.createElement("h1");
+      heading.textContent = "Averageness";
+      heading.style.textAlign = "center";
+      heading.style.marginTop = "20px";
 
-    const leftDiv = document.createElement("div");
-    leftDiv.style.width = "250px";
-    leftDiv.style.height = "100px";
-    leftDiv.style.float = "left";
-    leftDiv.style.backgroundImage = "url('T.jpg')";
-    leftDiv.style.backgroundSize = "cover";
-    leftDiv.style.backgroundRepeat = "no-repeat";
+      const divContainer = document.createElement("div");
+      divContainer.className = "centered-divs";
+      divContainer.style.display = "flex";
+      divContainer.style.justifyContent = "center";
+      divContainer.style.flexDirection = "row";
+      divContainer.style.marginTop = "50px";
 
-    const rightDiv = document.createElement("div");
-   rightDiv.style.margin-top: 250px;
-               rightDiv.style.width = "250px";
-    rightDiv.style.height = "100px";
-    rightDiv.style.float = "right";
-    rightDiv.style.backgroundImage = "url('I.jpg')";
-    rightDiv.style.backgroundSize = "cover";
-    rightDiv.style.backgroundRepeat = "no-repeat";
-   rightDiv.style.position ="fixed";         
+      const leftDiv = document.createElement("div");
+      leftDiv.className = "left-div";
+      leftDiv.style.width = "250px";
+      leftDiv.style.height = "100px";
+      leftDiv.style.backgroundImage = "url('T.jpg')";
+      leftDiv.style.backgroundSize = "cover";
+      leftDiv.style.backgroundRepeat = "no-repeat";
+      leftDiv.style.marginRight = "20px";
 
-    document.body.innerHTML = "";
-    document.body.appendChild(leftDiv);
-    document.body.appendChild(rightDiv);
-  }
+      const rightDiv = document.createElement("div");
+      rightDiv.className = "right-div";
+      rightDiv.style.width = "250px";
+      rightDiv.style.height = "100px";
+      rightDiv.style.backgroundImage = "url('I.jpg')";
+      rightDiv.style.backgroundSize = "cover";
+      rightDiv.style.backgroundRepeat = "no-repeat";
 
-        });
-    </script>
-  
+      divContainer.appendChild(leftDiv);
+      divContainer.appendChild(rightDiv);
+
+      document.body.innerHTML = "";
+      document.body.appendChild(heading);
+      document.body.appendChild(divContainer);
+    }
+  });
+</script>
+
