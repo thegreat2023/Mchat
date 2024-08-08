@@ -50,16 +50,17 @@
     }
 
     /* Button styles */
-    .button {
-      background-color: rgb(252,249,16);
-      padding: 10px 20px; /* Adjust padding for better responsiveness */
-      margin: 10px; /* Add some margin between buttons */
-      text-align: center;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      flex: 1; /* Make buttons equal in width */
-    }
+.button {
+  background-color: rgb(252,249,16);
+  padding: 10px 20px; /* Adjust padding for better responsiveness */
+  margin: 10px; /* Add some margin between buttons */
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  flex-grow: 1; /* Make buttons equal in width */
+  width: 0; /* Reset width to 0, so flex-grow can work properly */
+}
 
     .button:hover {
       background-color: rgba(252,249,16,0.5);
