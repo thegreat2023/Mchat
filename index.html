@@ -3,95 +3,104 @@
 <html lang="en">
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
     <title> Kani avmp</title>
 
 <style>
     /* Global styles */
     * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-        font-family: Arial, sans-serif;
-        background-color: #f0f0f0; /* Set a default background color */
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
     }
-
+    pre {
+     
+      word-break: break-all; /* Break the text into multiple lines */
+      white-space: pre-wrap; /* Preserve whitespace and formatting, and wrap to next line */
+    }
     /* Media query for mobile devices */
-    @media only screen and (min-width: 300px) {
-        body {
-            padding-bottom: 20px; /* Add some padding to the bottom */
-            .button-container {
-        text-align: center;
-        margin-top: 20px;
-        display: flex;
-        flex-wrap: wrap;
+    @media only screen and (max-width: 450px) {
+      .button-container {
         flex-direction: column;
-    }
+      }
+      .button {
+        width: 100%;
+        margin: 10px 0;
+      }
+        pre {
+          
+          word-break: break-all; /* Break the text into multiple lines */
+          white-space: pre-wrap; /* Preserve whitespace and formatting, and wrap to next line */
         }
     }
 
     /* Button styles */
     .button {
-        background-color: rgb(252,249,16);
-        padding: 10px 20px; /* Adjust padding for better responsiveness */
-        margin: 10px; /* Add some margin between buttons */
-        text-align: center;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        flex: 1; /* Make buttons equal in width */
+      background-color: rgb(252,249,16);
+      padding: 10px 20px; /* Adjust padding for better responsiveness */
+      margin: 10px; /* Add some margin between buttons */
+      text-align: center;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      flex: 1; /* Make buttons equal in width */
     }
 
     .button:hover {
-        background-color: rgba(252,249,16,0.5);
+      background-color: rgba(252,249,16,0.5);
     }
 
     /* Button container styles */
     .button-container {
-        text-align: center;
-        margin-top: 20px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+      text-align: center;
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
     /* Make buttons equal in width on larger screens */
     @media only screen and (min-width: 768px) {
-        .button {
-            width: calc(33.33% - 20px); /* Calculate width based on container width */
-            margin: 10px;
-        }
+      .button {
+        width: calc(33.33% - 20px); /* Calculate width based on container width */
+        margin: 10px;
+      }
     }
 
     /* Video styles */
     #myVideo {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        z-index: -1;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
     }
 
     /* Other styles */
     .op {
-        height: 50px;
-        background-color: rgba(255,255,255,0.5);
-        margin: 0;
-        padding: 0;
-        width: 100%;
+      height: 50px;
+      background-color: rgba(255,255,255,0.5);
+      margin: 0;
+      padding: 0;
+      width: 100%;
     }
 
     .op2 {
-        padding: 0;
-        margin-top: 87px;
-        height: 200px;
-        width: 100%;
-        background-color: rgb(73,109,105);
+      padding: 0;
+      margin-top: 87px;
+      height: 200px;
+      width: 100%;
+      background-color: rgb(73,109,105);
     }
 </style>
 
@@ -150,4 +159,3 @@
         });
     </script>
   
-</
