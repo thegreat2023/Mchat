@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-
 <html>
 
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Kani avmp</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title> Kani avmp</title>
 
-  <style>
+<style>
     /* Global styles */
     * {
       box-sizing: border-box;
@@ -18,90 +16,93 @@
       margin: 0;
       padding: 0;
       width: 100vw;
-      height: 100vh;
+      height: 100vw;
       overflow: hidden;
     }
-
-    .centered-divs {
+   .centered-divs {
       display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .rows {
-      display: flex;
-      justify-content: space-between;
-      width: 100%;
-      max-width: 600px; /* Set a maximum width for the row */
-      overflow: hidden;
-    }
-
-    .left-div {
+  flex-direction: column;
+  align-items: center;
+   }
+   .rows {
+        display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 600px; /* Set a maximum width for the row */
+       overflow: hidden;
+   }
+   .left-div {
       margin-left: 50px;
       width: 300px;
       height: 300px;
       background-image: url('I.jpg');
       background-size: cover;
-      float: left;
-    }
-
-    .right-div {
-      margin-right: 50px;
+     float: left;
+   }
+   .right-div {
+       margin-right: 50px;
       width: 300px;
       height: 300px;
       background-image: url('T.jpg');
       background-size: cover;
-      float: right;
-    }
+      margin-right: 50px;
+     float: right;
+   }
 
     /* Media query for mobile devices */
     @media only screen and (max-width: 450px) {
       .button-container {
         flex-direction: column;
+
       }
       .button {
         width: 60%;
         margin: 10px 0;
       }
 
-     @media only screen and (max-width: 450px) {
-      
-       .op {
-         width: 100%;
-         align-content: center;
+     p {
+        font-size: 30px;
+     }
+
+       .op2 {
+      margin-top: 550px;
+          height: 140px;
+          justify-content: center;
+
        }
-
-      .right-div {
-        display: block;
-        justify-content: center;
-      }
+       .right-div {
+          display:block
+          justify-content: center;
+       }
     }
 
-    .button {
-      background-color: rgb(252, 249, 16);
-      padding: 10px 20px;
-      margin: 10px 0; /* Add margin top and bottom, but not left and right */
-      text-align: center;
-      border: none;
-      border-radius: 15px;
-      cursor: pointer;
-      width: 100%; /* Make buttons take up full width of container */
-    }
 
+
+  .button {
+    background-color: rgb(252,249,16);
+    padding: 10px 20px;
+    margin: 10px 0; /* Add margin top and bottom, but not left and right */
+    text-align: center;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    width: 100%; /* Make buttons take up full width of container */
+  }
     .button:hover {
-      background-color: rgba(252, 249, 16, 0.5);
+      background-color: rgba(252,249,16,0.5);
     }
 
-    .button-container {
-      text-align: center;
-      margin-top: 20px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      max-width: 250px; /* Adjust this value to your desired maximum width */
-      margin: 0 auto; /* Center the container horizontally */
-    }
+  .button-container {
+    text-align: center;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 250px; /* Adjust this value to your desired maximum width */
+    margin: 0 auto; /* Center the container horizontally */
+  }
+
 
     /* Video styles */
     #myVideo {
@@ -113,119 +114,112 @@
       object-fit: cover;
       z-index: -1;
     }
-.op {
-  display: block;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 50px;
-  background-color: rgba(255, 255, 255, 0.5);
-  margin: 0;
-  padding: 0;
-  width: 100%;
-}
 
-.op2 {
-  padding: 20px;
-  margin-top: 87px;
-  height: 200px;
-  width: 100%;
-  background-color: rgb(73, 109, 105);
-  display: block;
-  justify-content: center;
-}
-
-
+    /* Other styles */
+    .op {
+       align-items: center;
+      height: 50px;
+      background-color: rgba(255,255,255,0.5);
+      margin: 0;
+        line-height: 50px
+      padding: 0;
+      width: 100%;
+       justify-content: center;
     
-  </style>
+    }
+
+    .op2 {
+      padding: 0;
+      margin-top: 87px;
+      height: 200px;
+      width: 100%;
+      background-color: rgb(73,109,105);
+    }
+</style>
 
 </head>
 
 <body>
 
-  <!-- Move the video element to the top of the body -->
-  <video id="myVideo" autoplay loop muted>
-    <source src="Intro.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+    <!-- Move the video element to the top of the body -->
+    <video id="myVideo" autoplay loop muted>
+        <source src="Intro.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 
-  <div class="op">
-    <h1 style="text-align: center; margin-top: 20px;">Welcome To The HOV</h1>
-    <p class="p1" style="text-align: center;">
-      <br>Hello, i used to be known as Fire Minecraft in 2021 days but
-      then in the next year Everything had to be started newly so then The Great Person came into the history The Mis Meckz, been more popular than
-      Fire Minecraft in 2022 days.
+    <div class="op">	
+        <center><h1>Welcome To The HOV </h1></center>
+        <p class="p1"><center> <br> Hello, i used to be known as Fire Minecraft in 2021 days but
+            then in the next year Everything had to be started newly so then The Great Person came into the history The Mis Meckz, been more popular than
+            Fire Minecraft in 2022 days.</center>
     </p>
-  </div>
-  <div class="op2">
-  </div>
+    </div>
+    <div class="op2">
+    </div>
 
-  <div class="button-container">
+    <div class="button-container">
         <button class="button" id="average1">Averageness</button>
-    <button class="button" id="average2">Owner-Preview</button>
-    <button class="button" id="average3">Information</button>
-    <a href="indexizumi.html"> Izumi </a>
-    <a href="indextrigo.html"> Trigo </a>
-  </div>
+        <button class="button" id="average2">Owner-Preview</button>
+        <button class="button" id="average3">Information</button>
+       <a href="indexizumi.html"> Izumi </a>
+       <a href="indextrigo.html"> Trigo </a>
+    </div>
 
-  <button id="muteButton" onclick="toggleMute()">Unmute</button>
+    <button id="muteButton" onclick="toggleMute()">Unmute</button>
 
-  <script>
-    var video = document.getElementById("myVideo");
-    video.muted = true; // Mute the video by default
+    <script>
+        var video = document.getElementById("myVideo");
+        video.muted = true; // Mute the video by default
 
-    function toggleMute() {
-      var button = document.getElementById("muteButton");
+        function toggleMute() {
+            var button = document.getElementById("muteButton");
 
-      if (video.muted) {
-        video.muted = false;
-        button.textContent = "Mute";
-      } else {
-        video.muted = true;
-        button.textContent = "Unmute";
-      }
+            if (video.muted) {
+                video.muted = false;
+                button.textContent = "Mute";
+            } else {
+                video.muted = true;
+                button.textContent = "Unmute";
+            }
+        }
+
+
+  document.getElementById("average1").addEventListener("click", function() {
+    var code = prompt("Enter your code:");
+    if (code === "8792" || code === "4322" || code === "0913") {
+      document.body.style.backgroundImage = "url('IntroT.jpg')";
+      document.body.style.backgroundSize = "cover";
+      document.body.style.backgroundRepeat = "no-repeat";
+      document.body.style.margin = '0';
+      document.body.style.padding = '0';
+      document.body.style.width = '100vw';
+      document.body.style.height = '100vh';
+      document.body.style.overflow = 'hidden';
+
+      const heading = document.createElement("h1");
+      heading.textContent = "Averageness";
+      heading.style.textAlign = "center";
+      heading.style.marginTop = "20px";
+
+      const divContainer = document.createElement("div");
+      divContainer.className = "centered-divs";
+            const rowsDiv = document.createElement("div");
+      divContainer.className = "rows";
+
+      const leftDiv = document.createElement("div");
+      leftDiv.className = "left-div";
+
+
+      const rightDiv = document.createElement("div");
+      rightDiv.className = "right-div";
+
+
+      divContainer.appendChild(leftDiv);
+      divContainer.appendChild(rightDiv);
+
+      document.body.innerHTML = "";
+      document.body.appendChild(heading);
+      document.body.appendChild(divContainer);
     }
-
-    document.getElementById("average1").addEventListener("click", function() {
-      var code = prompt("Enter your code:");
-      if (code === "8792" || code === "4322" || code === "0913") {
-        document.body.style.backgroundImage = "url('IntroT.jpg')";
-        document.body.style.backgroundSize = "cover";
-        document.body.style.backgroundRepeat = "no-repeat";
-        document.body.style.margin = '0';
-        document.body.style.padding = '0';
-        document.body.style.width = '100vw';
-        document.body.style.height = '100vh';
-        document.body.style.overflow = 'hidden';
-
-        const heading = document.createElement("h1");
-        heading.textContent = "Averageness";
-        heading.style.textAlign = "center";
-        heading.style.marginTop = "20px";
-
-        const divContainer = document.createElement("div");
-        divContainer.className = "centered-divs";
-
-        const rowsDiv = document.createElement("div");
-        rowsDiv.className = "rows";
-
-        const leftDiv = document.createElement("div");
-        leftDiv.className = "left-div";
-
-        const rightDiv = document.createElement("div");
-        rightDiv.className = "right-div";
-
-        rowsDiv.appendChild(leftDiv);
-        rowsDiv.appendChild(rightDiv);
-
-        divContainer.appendChild(heading);
-        divContainer.appendChild(rowsDiv);
-
-        document.body.innerHTML = "";
-        document.body.appendChild(divContainer);
-      }
-    });
-  </script>
-</body>
-
-</html>
+  });
+</script>
