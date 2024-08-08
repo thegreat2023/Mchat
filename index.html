@@ -166,7 +166,30 @@
               body.style.width = '100vw';
               body.style.height = '100vh';
               body.style.overflow = 'hidden';
-            }
+            
+           
+
+    const leftDiv = document.createElement("div");
+    leftDiv.style.width = "50%";
+    leftDiv.style.height = "100vh";
+    leftDiv.style.float = "left";
+    leftDiv.style.backgroundImage = "url('T.jpg')";
+    leftDiv.style.backgroundSize = "cover";
+    leftDiv.style.backgroundRepeat = "no-repeat";
+
+    const rightDiv = document.createElement("div");
+    rightDiv.style.width = "50%";
+    rightDiv.style.height = "100vh";
+    rightDiv.style.float = "right";
+    rightDiv.style.backgroundImage = "url('I.jpg')";
+    rightDiv.style.backgroundSize = "cover";
+    rightDiv.style.backgroundRepeat = "no-repeat";
+
+    document.body.innerHTML = "";
+    document.body.appendChild(leftDiv);
+    document.body.appendChild(rightDiv);
+  }
+
         });
     </script>
   
