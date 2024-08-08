@@ -1,84 +1,239 @@
-<!DOCTYPE html>
-
-<html lang="en">
+<html>
 
 <head>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title> Kani avmp</title>
 
 <style>
-#div {
-  z-index: 1;
-}
-.op {
-  height:50px;
-  background-color:rgba(255,255,255,0.5);
+    /* Global styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-}
-.op2 {
-  margin-top: 87px;
-  height:200px;
-  background-color:rgb(73,109,105);
-}
-.p1 {
-  font-family: verdena;
-}
-
-/* Add this CSS to position the video in the background */
-#myVideo {
-  position: fixed;
-  top: 0;
-  left: 0;
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      height: 100vw;
+      overflow: hidden;
+    }
+   .centered-divs {
+      display: flex;
+  flex-direction: column;
+  align-items: center;
+   }
+   .rows {
+        display: block;
+  justify-content: space-between;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
+  max-width: 600px; /* Set a maximum width for the row */
+       overflow: hidden;
+   }
+   .left-div {
+      
+     float: left;
+      margin-left: 50px;
+      width: 300px;
+      height: 300px;
+      background-image: url('T.jpg');
+      background-size: cover;
+    
+   }
+   .right-div {
+     
+      float: right;
+     margin-left: 100px
+       margin-right: 50px;
+      width: 300px;
+      height: 300px;
+      background-image: url('I.jpg');
+      background-size: cover;
+      margin-right: 50px;
+     
+   }
+
+    /* Media query for mobile devices */
+    @media only screen and (max-width: 450px) {
+      .button-container {
+        flex-direction: column;
+
+      }
+      .button {
+        width: 60%;
+        margin: 10px 0;
+      }
+      .left-div {
+        width: 150px;
+        height: 150px;
+      }
+      .right-div {
+        width: 150px;
+        height: 150px;
+      }
+p {
+      overflow:none }
+
+       .op2 {
+         
+      margin-top: 50px;
+          height: 14px;
+          justify-content: center;
+
+       }
+      
+    }
+
+
+
+  .button {
+    background-color: rgb(252,249,16);
+    padding: 10px 20px;
+    margin: 10px 0; /* Add margin top and bottom, but not left and right */
+    text-align: center;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    width: 100%; /* Make buttons take up full width of container */
+  }
+    .button:hover {
+      background-color: rgba(252,249,16,0.5);
+    }
+p {
+   font-family: New Times Romand;
+   color: white;
 }
+   
+  .button-container {
+    text-align: center;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 250px; /* Adjust this value to your desired maximum width */
+    margin: 0 auto; /* Center the container horizontally */
+  }
+
+
+    /* Video styles */
+    #myVideo {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    /* Other styles */
+    .op {
+       align-items: center;
+      height: 50px;
+      background-color: rgba(255,255,255,0.5);
+      margin: 0;
+        line-height: 50px
+      padding: 0;
+      width: 100%;
+       justify-content: center;
+       text-align: center;
+    
+    }
+
+    .op2 {
+      overflow: hidden;
+      padding: 0;
+      margin-top: 150px;
+      height: 200px;
+      width: 100%;
+      background-color: rgb(73,109,105);
+    }
 </style>
 
 </head>
 
 <body>
-  <!-- Move the video element to the top of the body -->
-  <video id="myVideo" autoplay loop muted>
-    <source src="Intro.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
 
-  <div class="op">	
-    <center><h1>Welcome To The HOV </h1></center>
-    <pre class="p1"><center>Hello, i used to be known as Fire Minecraft in 
+    <!-- Move the video element to the top of the body -->
+    <video id="myVideo" autoplay loop muted>
+        <source src="Intro.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 
-2021 
+    <div class="op">	
+        <center><h1>Welcome To The HOV </h1></center>
+        <p class="p1"><center> <br><br> Hello, i used to be known as Fire Minecraft in 2021 days but
+            then in the next year Everything had to be started newly so then The Great Person came into the history The Mis Meckz, been more popular than
+            Fire Minecraft in 2022 days.</center>
+    </p>
+    </div>
+    <div class="op2">
+    </div>
 
-days but then in the next year Everything had to be started newly so then The 
+    <div class="button-container">
+        <button class="button" id="average1">Averageness</button>
+        <button class="button" id="average2">Owner-Preview</button>
+        <button class="button" id="average3">Information</button>
+       <a href="indexizumi.html"> Izumi </a>
+       <a href="indextrigo.html"> Trigo </a>
+    </div>
 
-Great
- Person came into the history The Mis Meckz, been more popular than Fire 
+    <button id="muteButton" onclick="toggleMute()">Unmute</button>
 
-Minecraft in 2022 days.
-</pre>
-  </div>
-  <div class="op2">
-  </div>
+    <script>
+        var video = document.getElementById("myVideo");
+        video.muted = true; // Mute the video by default
 
-  <button id="muteButton" onclick="toggleMute()">Unmute</button>
+        function toggleMute() {
+            var button = document.getElementById("muteButton");
 
-<script>
-  var video = document.getElementById("myVideo");
-  video.muted = true; // Mute the video by default
+            if (video.muted) {
+                video.muted = false;
+                button.textContent = "Mute";
+            } else {
+                video.muted = true;
+                button.textContent = "Unmute";
+            }
+        }
 
-  function toggleMute() {
-    var button = document.getElementById("muteButton");
-    
-    if (video.muted) {
-      video.muted = false;
-      button.textContent = "Mute";
-    } else {
-      video.muted = true;
-      button.textContent = "Unmute";
+
+  document.getElementById("average1").addEventListener("click", function() {
+    var code = prompt("Enter your code:");
+    if (code === "8792" || code === "4322" || code === "0913") {
+      document.body.style.backgroundImage = "url('IntroT.jpg')";
+      document.body.style.backgroundSize = "cover";
+      document.body.style.backgroundRepeat = "no-repeat";
+      document.body.style.margin = '0';
+      document.body.style.padding = '0';
+      document.body.style.width = '100vw';
+      document.body.style.height = '100vh';
+      document.body.style.overflow = 'hidden';
+
+      const heading = document.createElement("h1");
+      heading.textContent = "Averageness";
+      heading.style.textAlign = "center";
+      heading.style.marginTop = "20px";
+
+      const divContainer = document.createElement("div");
+      divContainer.className = "centered-divs";
+            const rowsDiv = document.createElement("div");
+      divContainer.className = "rows";
+
+      const leftDiv = document.createElement("div");
+      leftDiv.className = "left-div";
+
+
+      const rightDiv = document.createElement("div");
+      rightDiv.className = "right-div";
+
+      divContainer.appendChild(leftDiv);
+      divContainer.appendChild(rightDiv);
+
+      document.body.innerHTML = "";
+      document.body.appendChild(heading);
+      document.body.appendChild(divContainer);
     }
-  }
+  });
 </script>
-  
-</body>
-</html>
