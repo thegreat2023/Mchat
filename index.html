@@ -216,8 +216,7 @@ p {
         <button class="button" id="average1">Averagers</button>
         <button class="button" id="average2">Owner-Preview</button>
         <button class="button" id="average3">Information</button>
-       <a href="indexizumi.html"> Izumi </a>
-       <a href="indextrigo.html"> Trigo </a>
+       
     </div>
 
     <button id="muteButton" onclick="toggleMute()">Unmute</button>
@@ -298,6 +297,12 @@ document.getElementById("average1").addEventListener("click", function() {
     document.body.appendChild(heading);
     document.body.appendChild(divContainer);
   }
+   rightButton.addEventListener('click', () => {
+      window.open("indexizumi.html");
+    });
+   leftButton.addEventListener('click', () => {
+      window.open("indextrigo.html");
+    });
 });
     </script>
     
