@@ -18,7 +18,7 @@
       margin: 0;
       padding: 0;
       width: 100vw;
-      height: 100vh;
+      height: 700px;
       overflow: hidden;
     }
     pre {
@@ -63,8 +63,9 @@
       text-align: center;
       margin-top: 20px;
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
       justify-content: center;
+      align-items: center;
     }
 
     /* Make buttons equal in width on larger screens */
@@ -81,7 +82,7 @@
       top: 0;
       left: 0;
       width: 100%;
-      height: 100%;
+      height: 700px;
       object-fit: cover;
       z-index: -1;
     }
@@ -116,10 +117,10 @@
 
     <div class="op">	
         <center><h1>Welcome To The HOV </h1></center>
-        <pre class="p1"><center>Hello, i used to be known as Fire Minecraft in 2021 days but
+        <p class="p1"><center> <br> Hello, i used to be known as Fire Minecraft in 2021 days but
             then in the next year Everything had to be started newly so then The Great Person came into the history The Mis Meckz, been more popular than
             Fire Minecraft in 2022 days.</center>
-    </pre>
+    </p>
     </div>
     <div class="op2">
     </div>
@@ -155,6 +156,13 @@
                 document.body.style.backgroundSize = "cover";
                 document.body.style.backgroundRepeat = "no-repeat";
                 document.body.innerHTML = "<h1><center>Averageness</center></h1>";
+              const body = document.querySelector('body');
+
+              body.style.margin = '0';
+              body.style.padding = '0';
+              body.style.width = '100vw';
+              body.style.height = '100vh';
+              body.style.overflow = 'hidden';
             }
         });
     </script>
