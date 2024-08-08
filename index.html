@@ -21,6 +21,17 @@
       height: 100vw;
       overflow: hidden;
     }
+   .centered-divs {
+      display: flex;
+  flex-direction: column;
+  align-items: center;
+   }
+   .rows {
+        display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 600px; /* Set a maximum width for the row */
+   }
    .left-div {
       margin-left: 50px;
       width: 300px;
@@ -29,6 +40,7 @@
       background-size: cover;
    }
    .right-div {
+       margin-right: 50px;
       width: 300px;
       height: 300px;
       background-image: url('T.jpg');
@@ -189,7 +201,8 @@
 
       const divContainer = document.createElement("div");
       divContainer.className = "centered-divs";
-      
+            const rowsDiv = document.createElement("div");
+      divContainer.className = "rows";
 
       const leftDiv = document.createElement("div");
       leftDiv.className = "left-div";
