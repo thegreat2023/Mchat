@@ -29,7 +29,7 @@
          
       }
       .button {
-        width: 80%;
+        width: 60%;
         margin: 10px 0;
       }
       
@@ -49,35 +49,34 @@
        }
     }
 
-    /* Button styles */
-.button {
-  background-color: rgb(252,249,16);
-  padding: 10px 20px; /* Adjust padding for better responsiveness */
-  margin: 10px; /* Add some margin between buttons */
-  text-align: center;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  flex-grow: 1; /* Make buttons equal in width */
-  width: 0; /* Reset width to 0, so flex-grow can work properly */
-}
 
+
+  .button {
+    background-color: rgb(252,249,16);
+    padding: 10px 20px;
+    margin: 10px 0; /* Add margin top and bottom, but not left and right */
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%; /* Make buttons take up full width of container */
+  }
     .button:hover {
       background-color: rgba(252,249,16,0.5);
     }
 
-    /* Button container styles */
-    .button-container {
-      text-align: center;
-      margin-top: 20px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
+  .button-container {
+    text-align: center;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 250px; /* Adjust this value to your desired maximum width */
+    margin: 0 auto; /* Center the container horizontally */
+  }
 
-    /* Make buttons equal in width on larger screens */
-    
+   
 
     /* Video styles */
     #myVideo {
