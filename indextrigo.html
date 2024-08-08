@@ -5,6 +5,8 @@
   <style>
     .image-container {
   position: relative;
+  display:.image-container {
+  position: relative;
   display: inline-block;
   cursor: pointer;
 }
@@ -19,28 +21,29 @@
 
 .image.expanded {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(1.5);
-  width: 80vw;
-  height: 80vh;
+  top: 50px;
+  left: 50px;
+  transform: translate(0, 0) scale(1);
+  width: calc(100vw - 100px);
+  height: calc(100vh - 100px);
   border-radius: 0;
   z-index: 1000;
   background-color: rgba(0, 0, 0, 0.8);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-/* Add a close button */
-.image.expanded::after {
-  content: "×";
+.close-button {
   position: absolute;
   top: 10px;
   right: 10px;
-  font-size: 24px;
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  border-radius: 50%;
   cursor: pointer;
+  display: none;
 }
 
-/* Add a overlay to darken the background */
 .overlay {
   position: fixed;
   top: 0;
@@ -50,7 +53,7 @@
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 999;
   display: none;
-}
+      }
     
     body {
       margin: 0;
@@ -111,15 +114,29 @@
 <script>
 const imageContainer = document.querySelector('.image-container');
 const image = document.querySelector('.image');
+const closeButton = document.querySelector('.close-button');
 const overlay = document.querySelector('.overlay');
 
 imageContainer.addEventListener('click', () => {
   image.classList.add('expanded');
+  closeButton.style.display = 'block';
   overlay.style.display = 'block';
+});
+
+closeButton.addEventListener('click', () => {
+  image.classList.remove('expanded');
+  closeButton.style.display = 'none';
+  overlay.style.display = 'none';
 });
 
 overlay.addEventListener('click', () => {
   image.classList.remove('expanded');
+  closeButton.style.display = 'none';
   overlay.style.display = 'none';
 });
+  
+
 </script>
+
+
+  
