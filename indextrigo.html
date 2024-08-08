@@ -4,61 +4,60 @@
   <title>Trigo's Exposure</title>
   <style>
     .image-container {
-  position: relative;
-  display:.image-container {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-}
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+    }
 
-.image {
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 10px;
-  transition: transform 0.3s;
-}
+    .image {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
 
-.image.expanded {
-  position: fixed;
-  top: 50px;
-  left: 50px;
-  transform: translate(0, 0) scale(1);
-  width: calc(100vw - 100px);
-  height: calc(100vh - 100px);
-  border-radius: 0;
-  z-index: 1000;
-  background-color: rgba(0, 0, 0, 0.8);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
+    .image.expanded {
+      position: fixed;
+      top: 50px;
+      left: 50px;
+      transform: translate(0, 0) scale(1);
+      width: calc(100vw - 100px);
+      height: calc(100vh - 100px);
+      border-radius: 0;
+      z-index: 1000;
+      background-color: rgba(0, 0, 0, 0.8);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
 
-.close-button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 20px;
-  height: 20px;
-  background-color: red;
-  border-radius: 50%;
-  cursor: pointer;
-  display: none;
-}
+    .close-button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 20px;
+      height: 20px;
+      background-color: red;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+    }
 
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 999;
-  display: none;
-      }
-    
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+      display: none;
+    }
+
     body {
       margin: 0;
       padding: 0;
     }
+
     .container {
       display: inline-block; /* changed from block to inline-block */
       height: 300px;
@@ -67,17 +66,21 @@
       background-size: cover;
       object-fit: cover;
     }
+
     .text-container {
       display: inline-block; /* added this class */
       vertical-align: top; /* added this property */
     }
+
     p {
       margin: 0; /* added this to remove default margin */
     }
+
     h1 {
       text-align: center;
       margin-top: 20px;
     }
+
     /* Media query for mobile devices */
     @media only screen and (max-width: 450px) {
       h1 {
@@ -89,6 +92,10 @@
         align-items: center;
       }
     }
+
+    .image-container:nth-child(2) {
+      margin-left: 20px; /* add some space between images */
+    }
   </style>
 </head>
 <body>
@@ -98,45 +105,45 @@
     <p>Id - .trigo_69<br>Age - 19<br>Location - Assam<br>Curren-Location - Haryana<br>Nationality - Indian</p>
   </div>
   <div class="image-container">
-  <img src="I.jpg" alt="Image" class="image">
+    <img src="I.jpg" alt="Image 1" class="image">
   </div>
-  
+  <div class="image-container">
+    <img src="I2.jpg" alt="Image 2" class="image">
+  </div>
+
+  <div class="close-button"></div>
+  <div class="overlay"></div>
+
+  <script>
+    const imageContainers = document.querySelectorAll('.image-container');
+    const images = document.querySelectorAll('.image');
+    const closeButton = document.querySelector('.close-button');
+    const overlay = document.querySelector('.overlay');
+
+    imageContainers.forEach((container) => {
+      container.addEventListener('click', () => {
+        const image = container.querySelector('.image');
+        image.classList.add('expanded');
+        closeButton.style.display = 'block';
+        overlay.style.display = 'block';
+      });
+    });
+
+    closeButton.addEventListener('click', () => {
+      images.forEach((image) => {
+        image.classList.remove('expanded');
+      });
+      closeButton.style.display = 'none';
+      overlay.style.display = 'none';
+    });
+
+    overlay.addEventListener('click', () => {
+      images.forEach((image) => {
+        image.classList.remove('expanded');
+      });
+      closeButton.style.display = 'none';
+      overlay.style.display = 'none';
+    });
+  </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-<script>
-const imageContainer = document.querySelector('.image-container');
-const image = document.querySelector('.image');
-const closeButton = document.querySelector('.close-button');
-const overlay = document.querySelector('.overlay');
-
-imageContainer.addEventListener('click', () => {
-  image.classList.add('expanded');
-  closeButton.style.display = 'block';
-  overlay.style.display = 'block';
-
-
-closeButton.addEventListener('click', () => {
-  image.classList.remove('expanded');
-  closeButton.style.display = 'none';
-  overlay.style.display = 'none';
-});
-
-overlay.addEventListener('click', () => {
-  image.classList.remove('expanded');
-  closeButton.style.display = 'none';
-  overlay.style.display = 'none';
-});
-  
-
-</script>
-
-
-  
