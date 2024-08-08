@@ -115,7 +115,57 @@ p {
     max-width: 250px; /* Adjust this value to your desired maximum width */
     margin: 0 auto; /* Center the container horizontally */
   }
+.centered-divs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+.rows {
+  display: block;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 600px; /* Set a maximum width for the row */
+  overflow: hidden;
+}
+
+.left-div, .right-div {
+  width: 300px;
+  height: 300px;
+  background-size: cover;
+  margin: 20px;
+}
+
+.left-div {
+  float: left;
+  background-image: url('T.jpg');
+}
+
+.right-div {
+  float: right;
+  background-image: url('I.jpg');
+}
+
+.box-name {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.buttons {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.button {
+  background-color: rgb(252,249,16);
+  padding: 10px 20px;
+  margin: 10px 0;
+  text-align: center;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  width: 100%;
+}
 
     /* Video styles */
     #myVideo {
@@ -181,6 +231,23 @@ p {
     </div>
 
     <button id="muteButton" onclick="toggleMute()">Unmute</button>
+   <h1>Averageness</h1>
+<div class="centered-divs">
+  <div class="rows">
+    <div class="left-div">
+      <div class="box-name">Left Box</div>
+      <div class="buttons">
+        <button class="button">Left Button</button>
+      </div>
+    </div>
+    <div class="right-div">
+      <div class="box-name">Right Box</div>
+      <div class="buttons">
+        <button class="button">Right Button</button>
+      </div>
+    </div>
+  </div>
+</div>
 
     <script>
         var video = document.getElementById("myVideo");
@@ -199,41 +266,63 @@ p {
         }
 
 
-  document.getElementById("average1").addEventListener("click", function() {
-    var code = prompt("Enter your code:");
-    if (code === "8792" || code === "4322" || code === "0913") {
-      document.body.style.backgroundImage = "url('IntroT.jpg')";
-      document.body.style.backgroundSize = "cover";
-      document.body.style.backgroundRepeat = "no-repeat";
-      document.body.style.margin = '0';
-      document.body.style.padding = '0';
-      document.body.style.width = '100vw';
-      document.body.style.height = '100vh';
-      document.body.style.overflow = 'hidden';
+document.getElementById("average1").addEventListener("click", function() {
+  var code = prompt("Enter your code:");
+  if (code === "8792" || code === "4322" || code === "0913") {
+    document.body.style.backgroundImage = "url('IntroT.jpg')";
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.margin = '0';
+    document.body.style.padding = '0';
+    document.body.style.width = '100vw';
+    document.body.style.height = '100vh';
+    document.body.style.overflow = 'hidden';
 
-      const heading = document.createElement("h1");
-      heading.textContent = "Averageness";
-      heading.style.textAlign = "center";
-      heading.style.marginTop = "20px";
+    const heading = document.createElement("h1");
+    heading.textContent = "Averageness";
+    heading.style.textAlign = "center";
+    heading.style.marginTop = "20px";
 
-      const divContainer = document.createElement("div");
-      divContainer.className = "centered-divs";
-            const rowsDiv = document.createElement("div");
-      divContainer.className = "rows";
+    const divContainer = document.createElement("div");
+    divContainer.className = "centered-divs";
+    const rowsDiv = document.createElement("div");
+    rowsDiv.className = "rows";
 
-      const leftDiv = document.createElement("div");
-      leftDiv.className = "left-div";
+    const leftDiv = document.createElement("div");
+    leftDiv.className = "left-div";
+    const leftBoxName = document.createElement("div");
+    leftBoxName.className = "box-name";
+    leftBoxName.textContent = "Left Box";
+    const leftButtons = document.createElement("div");
+    leftButtons.className = "buttons";
+    const leftButton = document.createElement("button");
+    leftButton.className = "button";
+    leftButton.textContent = "Left Button";
+    leftButtons.appendChild(leftButton);
+    leftDiv.appendChild(leftBoxName);
+    leftDiv.appendChild(leftButtons);
 
+    const rightDiv = document.createElement("div");
+    rightDiv.className = "right-div";
+    const rightBoxName = document.createElement("div");
+    rightBoxName.className = "box-name";
+    rightBoxName.textContent = "Right Box";
+    const rightButtons = document.createElement("div");
+    rightButtons.className = "buttons";
+    const rightButton = document.createElement("button");
+    rightButton.className = "button";
+    rightButton.textContent = "Right Button";
+    rightButtons.appendChild(rightButton);
+    rightDiv.appendChild(rightBoxName);
+    rightDiv.appendChild(rightButtons);
 
-      const rightDiv = document.createElement("div");
-      rightDiv.className = "right-div";
+    rowsDiv.appendChild(leftDiv);
+    rowsDiv.appendChild(rightDiv);
+    divContainer.appendChild(rowsDiv);
 
-      divContainer.appendChild(leftDiv);
-      divContainer.appendChild(rightDiv);
-
-      document.body.innerHTML = "";
-      document.body.appendChild(heading);
-      document.body.appendChild(divContainer);
-    }
-  });
+    document.body.innerHTML = "";
+    document.body.appendChild(heading);
+    document.body.appendChild(divContainer);
+  }
+});
 </script>
