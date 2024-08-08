@@ -21,6 +21,18 @@
       height: 100vw;
       overflow: hidden;
     }
+   .left-div {
+      width: 300px;
+      height: 300px;
+      background-image: url('I.jpg');
+      background-size: cover;
+   }
+   .right-div {
+      width: 300px;
+      height: 300px;
+      background-image: url('T.jpg');
+      background-size: cover;
+   }
 
     /* Media query for mobile devices */
     @media only screen and (max-width: 450px) {
@@ -182,20 +194,11 @@
 
       const leftDiv = document.createElement("div");
       leftDiv.className = "left-div";
-      leftDiv.style.width = "250px";
-      leftDiv.style.height = "100px";
-      leftDiv.style.backgroundImage = "url('T.jpg')";
-      leftDiv.style.backgroundSize = "cover";
-      leftDiv.style.backgroundRepeat = "no-repeat";
-      leftDiv.style.marginRight = "20px";
+      
 
       const rightDiv = document.createElement("div");
       rightDiv.className = "right-div";
-      rightDiv.style.width = "250px";
-      rightDiv.style.height = "100px";
-      rightDiv.style.backgroundImage = "url('I.jpg')";
-      rightDiv.style.backgroundSize = "cover";
-      rightDiv.style.backgroundRepeat = "no-repeat";
+   
 
       divContainer.appendChild(leftDiv);
       divContainer.appendChild(rightDiv);
