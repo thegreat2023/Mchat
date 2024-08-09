@@ -87,40 +87,45 @@ p {
     margin: 0 auto; /* Center the container horizontally */
   }
 
+
 .centered-divs {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100vh; /* Set a fixed height for the container */
+    }
 
-.rows {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  max-width: 600px; /* Set a maximum width for the row */
-  overflow: hidden;
-}
+    .rows {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      max-width: 700px;
+      overflow: hidden;
+      flex-grow: 1; /* Add this to allow the rows container to take up remaining space */
+    }
 
-.left-div, .right-div {
-  width: 300px;
-  height: 300px;
-  background-size: cover;
-  margin: 50px;
-}
+    .left-div, .right-div {
+      width: 300px;
+      height: 300px;
+      background-size: cover;
+      margin: 10px;
+    }
 
-.left-div {
-  background-image: url('T.jpg');
-   
-}
+    .left-div {
+      background-color: red;
+      margin-right: 100px;
+    }
 
-.right-div {
-  background-image: url('I.jpg');
-}
+    .right-div {
+      background-color: blue;
+    }
 
-.box-name {
-  text-align: center;
-  margin-top: 315px;
-}
+    .box-name {
+      text-align: center;
+      margin-top: 320px; /* Increase the margin as needed */
+    }
+
+
 
 .buttons {
   text-align: center;
