@@ -263,6 +263,9 @@ document.getElementById("average1").addEventListener("click", function() {
     leftButtons.appendChild(leftButton);
     leftDiv.appendChild(leftBoxName);
     leftDiv.appendChild(leftButtons);
+     leftButton.onclick = function() {
+  location.href = "indextrigo.html";
+};
 
     const rightDiv = document.createElement("div");
     rightDiv.className = "right-div";
@@ -277,6 +280,9 @@ document.getElementById("average1").addEventListener("click", function() {
     rightButtons.appendChild(rightButton);
     rightDiv.appendChild(rightBoxName);
     rightDiv.appendChild(rightButtons);
+     rightButton.onclick = function() {
+  location.href = "indexizumi.html";
+};
 
     rowsDiv.appendChild(leftDiv);
     rowsDiv.appendChild(rightDiv);
@@ -286,13 +292,7 @@ document.getElementById("average1").addEventListener("click", function() {
     document.body.appendChild(heading);
     document.body.appendChild(divContainer);
   }
-   rightButton.addEventListener('click', () => {
-  location.href = "indexizumi.html";
-});
 
-leftButton.addEventListener('click', () => {
-  location.href = "indextrigo.html";
-});
 });
     </script>
     
