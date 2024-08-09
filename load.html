@@ -1,33 +1,49 @@
-<html> <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>
-    Owner-Preview
-  </title>
-  <style>
-    body {
-      align-items: cener;
-      justify-content: center;
-      overflow: hidden;
-    }
-    .div1 {
-      align-items: cener;
-      justify-content: center;
-    }
-button {
-  border-radius: 10px;
-  background-color: rgb(61,66,254);
-}
-
-
-    
-  </style>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Owner-Preview Page</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			text-align: center;
+		}
+		
+		.container {
+			margin: 40px auto;
+		}
+		
+		.message {
+			font-size: 24px;
+			color: #333;
+			margin-bottom: 20px;
+		}
+		
+		.button {
+			background-color: #ADD8E6; /* light blue color */
+			color: #333;
+			border: none;
+			padding: 10px 20px;
+			font-size: 18px;
+			cursor: pointer;
+		}
+		
+		.button:hover {
+			background-color: #87CEEB; /* light blue hover color */
+		}
+	</style>
 </head>
 <body>
-
-
-<div class=div1>
-  <button href="index.html"> Try Again </button>
-</div>
-
-  
-</body></html>
+	<div class="container">
+		<p class="message">Owner-Preview page is under construction</p>
+		<button class="button">Try Again</button>
+	</div>
+	
+	<script>
+		// Add event listener to the button
+		document.querySelector('.button').addEventListener('click', function() {
+			// Add your logic here when the button is clicked
+			alert('Button clicked!');
+		});
+	</script>
+</body>
+</html>
