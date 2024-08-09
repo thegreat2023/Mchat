@@ -1,1 +1,143 @@
-IZUMI
+<html>
+
+<head>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title> Izumi's Exposure</title>
+
+<style>
+    /* Global styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      height: 100vw;
+    
+      overflow: hidden;
+    }
+   
+
+   
+
+    /* Media query for mobile devices */
+    @media only screen and (max-width: 450px) {
+      .button-container {
+        flex-direction: column;
+
+      }
+      .button {
+        width: 60%;
+        margin: 10px 0;
+      } }
+      
+      
+    
+
+
+
+  .button {
+    background-color: rgb(252,249,16);
+    padding: 10px 20px;
+    margin: 10px 0; /* Add margin top and bottom, but not left and right */
+    text-align: center;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    width: 100%; /* Make buttons take up full width of container */
+  }
+    .button:hover {
+      background-color: rgba(252,249,16,0.5);
+    }
+p {
+   display : inline-block
+   font-family: New Times Romand;
+   color: white;
+}
+   
+  .button-container {
+    text-align: center;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 250px;
+    margin: 0 auto; 
+    }
+
+    /* Video styles */
+    #myVideo {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .container {
+      display: inline-block; /* changed from block to inline-block */
+      height: 300px;
+      width: 300px;
+      background-image: url('I.jpg');
+      background-size: cover;
+      object-fit: cover;
+    }
+   h1 {
+      color: white;
+   }
+</style>
+
+</head>
+
+<body>
+
+    <!-- Move the video element to the top of the body -->
+    <video id="myVideo" autoplay loop muted>
+        <source src="IntroS.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    
+        <center><h1>Izumi's Exposure</h1></center>
+        <div class="container"> </div>
+
+            <p>Id - the_izu<br>Age - 16<br>Location - UP<br>Curren-Location - Haryana<br>Nationality - Indian</p>
+        <button id="muteButton" onclick="toggleMute()">Unmute</button>
+    
+    </body>
+</html>
+
+     
+
+    <script>
+        var video = document.getElementById("myVideo");
+        video.muted = true; // Mute the video by default
+
+        function toggleMute() {
+            var button = document.getElementById("muteButton");
+
+            if (video.muted) {
+                video.muted = false;
+                button.textContent = "Mute";
+            } else {
+                video.muted = true;
+                button.textContent = "Unmute";
+            }
+                  } 
+    </script>
+
+  
+
+
+
+
+
+
+  
