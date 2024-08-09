@@ -287,11 +287,12 @@ document.getElementById("average1").addEventListener("click", function() {
     document.body.appendChild(divContainer);
   }
    rightButton.addEventListener('click', () => {
-      window.open("indexizumi.html");
-    });
-   leftButton.addEventListener('click', () => {
-      window.open("indextrigo.html");
-    });
+  window.open("indexizumi.html", "_self");
+});
+
+leftButton.addEventListener('click', () => {
+  window.open("indextrigo.html", "_self");
+});
 });
     </script>
     
