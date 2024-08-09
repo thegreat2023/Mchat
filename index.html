@@ -281,6 +281,10 @@ document.getElementById("average1").addEventListener("click", function() {
      rightButton.onclick = function() {
   location.href = "indexizumi.html";
 };
+     let button = document.getElementById("average2");
+button.addEventListener("click", function() {
+  location.href = "load.html";
+});
 
     rowsDiv.appendChild(leftDiv);
     rowsDiv.appendChild(rightDiv);
@@ -289,7 +293,7 @@ document.getElementById("average1").addEventListener("click", function() {
     document.body.innerHTML = "";
     document.body.appendChild(heading);
     document.body.appendChild(divContainer);
-  }
+  };
 
 });
     </script>
