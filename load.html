@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Owner-Preview Page</title>
+	<title>Owner-Preview</title>
 	<style>
 		body {
 			font-family: Arial, sans-serif;
-			text-align: center;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+			margin: 0;
 		}
 		
 		.container {
-			margin: 40px auto;
+			text-align: center;
 		}
 		
 		.message {
@@ -35,15 +39,7 @@
 <body>
 	<div class="container">
 		<p class="message">Owner-Preview page is under construction</p>
-		<button class="button">Try Again</button>
+		<a href="https://www.example.com" class="button">Try Again</a>
 	</div>
-	
-	<script>
-		// Add event listener to the button
-		document.querySelector('.button').addEventListener('click', function() {
-			// Add your logic here when the button is clicked
-			alert('Button clicked!');
-		});
-	</script>
 </body>
 </html>
