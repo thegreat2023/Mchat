@@ -202,7 +202,7 @@ p {
 
     <div class="button-container">
         <button class="button" id="average1">Averagers</button>
-        <button class="button" id="average2">Owner-Preview</button>
+        <button class="button" id="average2" onclick="location.href='load.html';">Owner-Preview</button>
         <button class="button" id="average3">Information</button>
       </div>
 
@@ -281,10 +281,7 @@ document.getElementById("average1").addEventListener("click", function() {
      rightButton.onclick = function() {
   location.href = "indexizumi.html";
 };
-     let button = document.getElementById("average2");
-button.onClick = function() {
-  location.href = "load.html";
-};
+     
 
     rowsDiv.appendChild(leftDiv);
     rowsDiv.appendChild(rightDiv);
