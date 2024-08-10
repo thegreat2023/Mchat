@@ -135,7 +135,7 @@ p {
 }
 
 .box-name {
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 
 
@@ -152,7 +152,8 @@ p {
 
     /* Other styles */
     .op {
-       color: white;
+       display: flex;
+       
        align-items: center;
       height: 50px;
       background-color: rgba(255,255,255,0.5);
@@ -164,8 +165,12 @@ p {
        text-align: center;
     
     }
+   op > p {
+      color: white;
+   }
 
     .op2 {
+       display: block;
       overflow: hidden;
       padding: 0;
       margin-top: 150px;
@@ -173,6 +178,9 @@ p {
       width: 100%;
       background-color: rgb(73,109,105);
     }
+   .hSecond {
+      color:white;
+   }
 </style>
 
 </head>
@@ -238,7 +246,7 @@ document.getElementById("average1").addEventListener("click", function() {
     heading.textContent = "Averagers";
     heading.style.textAlign = "center";
     heading.style.marginTop = "20px";
-     heading.style.color ="white";
+     head.className ="hSecond";
 const para = document.createElement("p");
      para.textContent = "These two people are wanted";
     const divContainer = document.createElement("div");
