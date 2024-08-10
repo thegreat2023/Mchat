@@ -55,6 +55,7 @@ p {
        }
       
     }
+   /* Media query ENDS */
 
 
 
@@ -133,20 +134,6 @@ p {
    
 }
 
-.button {
-  background-color: rgb(252,249,16);
-  padding: 10px 20px;
-  margin: 10px 0;
-  text-align: center;
-  border: none;
-  border-radius: 15px;
-  cursor: pointer;
-  width: 100%;
-}
-
-
-
-
 .box-name {
   margin-bottom: 20px;
 }
@@ -165,6 +152,7 @@ p {
 
     /* Other styles */
     .op {
+       color: white;
        align-items: center;
       height: 50px;
       background-color: rgba(255,255,255,0.5);
@@ -200,7 +188,7 @@ p {
     <div class="op">	
         <center><h1>Welcome To The HOV </h1></center>
        <center><h3>109 Views as of 06:00:00AM</h3></center>
-        <p class="p1" style="color:white;"><center> <br> Hello, a guy used to be known as Fire Minecraft in 2021 days but
+        <p class="p1"><center> <br> Hello, a guy used to be known as Fire Minecraft in 2021 days but
             then in the next year Everything had to be started newly so then The Great Person came into the history The Mis Meckz, been more popular than
             Fire Minecraft in 2022 days.</center>
     </p>
@@ -250,6 +238,7 @@ document.getElementById("average1").addEventListener("click", function() {
     heading.textContent = "Averagers";
     heading.style.textAlign = "center";
     heading.style.marginTop = "20px";
+     heading.style.color ="white";
 const para = document.createElement("p");
      para.textContent = "These two people are wanted";
     const divContainer = document.createElement("div");
@@ -299,6 +288,7 @@ const para = document.createElement("p");
     document.body.innerHTML = "";
     document.body.appendChild(heading);
     document.body.appendChild(divContainer);
+     document.body.appendChild(para);
   };
 
 });
